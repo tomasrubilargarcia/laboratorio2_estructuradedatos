@@ -100,7 +100,7 @@ void * prevList(List * list) {
         return NULL;
     }
 
-    void * anteriorUltimo = last->current->data;
+    void * anteriorUltimo = list->current->data;
     
     return anteriorUltimo;
 }
