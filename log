@@ -26,3 +26,9 @@ list.c:38:26: error: expected ‘,’ or ‘;’ before ‘malloc’
    38 |     List* nuevo = (*List)malloc(sizeof(List));
       |                          ^~~~~~
 2e6273e
+Sat Mar 28 06:43:48 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/60
+e7ca2e7
