@@ -22,7 +22,7 @@ struct List {
 
 typedef List List;
 
-Node * createNode(void * data) {
+Node * createNode(void * data) {   //crea un nodo, ya reserva su espacio y retorna su direccion
     Node * new = (Node *)malloc(sizeof(Node));
     assert(new != NULL);  //que sera assert? afirmar que se cumple la condicion¿?
     new->data = data;
@@ -109,6 +109,17 @@ void * prevList(List * list) {
 // Puede utilizar la función Node* createNode(void * data) la cual crea, incializa y retorna un nodo con el dato correspondiente.
 
 void pushFront(List * list, void * data) {
+    Node* new = createNode(data);        //creo el nodo, almaceno su dato
+
+    if(list->head == NULL){            // si la lista está vacia
+        list->head = new;             // el nuevo sera la cabeza
+        list->tail = new;            // el nuevo será la cola tambien
+        list->current = new;        // y el nodo actual (quizas por siacaso)
+    }else{  //de no ser asi
+        nuevo->next = list->head;   //apunto el siguiente del nuevo hacia la cabeza
+        list->head->prev = new;    // que el anterior del nodo que esta a la cabeza apunte al nuevo
+        list->head = new;         // y ahora nuevo es el primero (head osi)
+    }
 }
 
 void pushBack(List * list, void * data) {

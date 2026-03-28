@@ -186,3 +186,14 @@ Sat Mar 28 07:45:11 PM UTC 2026:
  tests:  9|3
 total_score: 30/60
 8b92cb0
+Sat Mar 28 11:19:31 PM UTC 2026: 
+ list.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:119:9: error: ‘nuevo’ undeclared (first use in this function)
+  119 |         nuevo->next = list->head;   //apunto el siguiente del nuevo hacia la cabeza
+      |         ^~~~~
+list.c:119:9: note: each undeclared identifier is reported only once for each function it appears in
+6f75c80
