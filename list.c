@@ -97,7 +97,7 @@ void * prevList(List * list) {
 
     last->current = last->tail->prev;
     if (last->current != NULL){
-        return NULL
+        return NULL;
     }
 
     void * anteriorUltimo = last->current->data;
