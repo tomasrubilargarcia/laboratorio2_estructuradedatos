@@ -197,3 +197,9 @@ list.c:119:9: error: ‘nuevo’ undeclared (first use in this function)
       |         ^~~~~
 list.c:119:9: note: each undeclared identifier is reported only once for each function it appears in
 6f75c80
+Sat Mar 28 11:19:51 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  10|2
+total_score: 40/60
+0762206

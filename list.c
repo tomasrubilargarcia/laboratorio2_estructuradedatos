@@ -116,7 +116,7 @@ void pushFront(List * list, void * data) {
         list->tail = new;            // el nuevo será la cola tambien
         list->current = new;        // y el nodo actual (quizas por siacaso)
     }else{  //de no ser asi
-        nuevo->next = list->head;   //apunto el siguiente del nuevo hacia la cabeza
+        new->next = list->head;   //apunto el siguiente del nuevo hacia la cabeza
         list->head->prev = new;    // que el anterior del nodo que esta a la cabeza apunte al nuevo
         list->head = new;         // y ahora nuevo es el primero (head osi)
     }
