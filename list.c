@@ -69,7 +69,7 @@ void * nextList(List * list) {
     if (list->current == NULL){    // y si actual es nulo?
         return NULL;               // retornamos nulo
     }
-    void* siguiente = list->current; //definimos siguiente
+    void* siguiente = list->current->data; //definimos siguiente
     
     return siguiente;
 }
