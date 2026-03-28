@@ -24,7 +24,7 @@ typedef List List;
 
 Node * createNode(void * data) {
     Node * new = (Node *)malloc(sizeof(Node));
-    assert(new != NULL);
+    assert(new != NULL);  //que sera assert? afirmar que se cumple la condicion¿?
     new->data = data;
     new->prev = NULL;
     new->next = NULL;
@@ -35,7 +35,13 @@ Node * createNode(void * data) {
 // Recuerda reservar memoria al puntero usando malloc o calloc.
 
 List * createList() {
-     return NULL;
+    List* nuevo = (*List)malloc(sizeof(List));
+    if (nuevo != NULL){
+        nuevo->head = NULL;
+        nuevo->tail = NULL;
+        nuevo->current = NULL;
+    }
+     return nuevo;
 }
 
 // 2. Programe las funciones void * firstList(List * list) y void * nextList(List * list).

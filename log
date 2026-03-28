@@ -2,3 +2,16 @@ Fri Mar 27 05:41:25 PM UTC 2026:
  tests:  0|6
 total_score: 0/60
 331efde
+Sat Mar 28 06:42:27 PM UTC 2026: 
+ list.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:38:21: error: expected expression before ‘List’
+   38 |     List* nuevo = (*List)malloc(sizeof(List));
+      |                     ^~~~
+list.c:38:26: error: expected ‘,’ or ‘;’ before ‘malloc’
+   38 |     List* nuevo = (*List)malloc(sizeof(List));
+      |                          ^~~~~~
+aca766b
