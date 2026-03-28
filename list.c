@@ -61,12 +61,12 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    if (list->current == NULL){  // y si head esta nulo? (posible trampa)
+    if (list->current == NULL){  // y si head esta nulo? (puede que creen una lista vacia)
         return NULL;             // retornamos nulo
     }
 
     list->current = list->current->next;  //ahora el actual = siguiente
-    if (list->current == NULL){    // y si actual es nulo?
+    if (list->current == NULL){    // y si actual es nulo? (podria ser el ultimo)
         return NULL;               // retornamos nulo
     }
     void* siguiente = list->current->data; //definimos siguiente
