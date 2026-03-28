@@ -15,3 +15,14 @@ list.c:38:26: error: expected ‘,’ or ‘;’ before ‘malloc’
    38 |     List* nuevo = (*List)malloc(sizeof(List));
       |                          ^~~~~~
 aca766b
+Sat Mar 28 06:42:54 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:38:21: error: expected expression before ‘List’
+   38 |     List* nuevo = (*List)malloc(sizeof(List));
+      |                     ^~~~
+list.c:38:26: error: expected ‘,’ or ‘;’ before ‘malloc’
+   38 |     List* nuevo = (*List)malloc(sizeof(List));
+      |                          ^~~~~~
+2e6273e
