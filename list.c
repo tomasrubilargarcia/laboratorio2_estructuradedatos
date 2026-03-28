@@ -96,7 +96,7 @@ void * prevList(List * list) {
     }
 
     list->current = list->current->prev;  //dato anterior a current (no al ultimo error mio fatal)
-    if (list->current != NULL){
+    if (list->current == NULL){   // le habia puesto != (corregido)
         return NULL;
     }
 
