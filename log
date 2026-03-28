@@ -132,3 +132,15 @@ list.c:94:9: error: ‘last’ undeclared (first use in this function); did you 
       |         list
 list.c:94:9: note: each undeclared identifier is reported only once for each function it appears in
 47cd647
+Sat Mar 28 07:37:55 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘prevList’:
+list.c:94:9: error: ‘last’ undeclared (first use in this function); did you mean ‘list’?
+   94 |     if (last->current == NULL){
+      |         ^~~~
+      |         list
+list.c:94:9: note: each undeclared identifier is reported only once for each function it appears in
+5d04a8c
