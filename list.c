@@ -145,6 +145,8 @@ void pushCurrent(List * list, void * data) {
     }else{  //sino haynada
         list->tail = aux; //la cola o el ultimo de la lista sera el aux
     }
+
+    list->current->next = aux;
 }
 
 void * popFront(List * list) {
