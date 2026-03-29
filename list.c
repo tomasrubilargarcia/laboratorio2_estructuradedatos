@@ -185,7 +185,7 @@ void * popCurrent(List * list) {
     }
 
     //actualizar el actual luego de desreferenciar
-    list->current = nodoBorrar->next  //el actual sera el que viene 
+    list->current = nodoBorrar->next;  //el actual sera el que viene 
     free(nodoBorrar);                //liberamos el nodo desreferenciado en la memoria
 
     return datoNodoBorrar;          //mostramos el dato eliminado
