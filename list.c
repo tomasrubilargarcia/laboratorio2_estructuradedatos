@@ -146,7 +146,7 @@ void pushCurrent(List * list, void * data) {
         list->tail = aux; //la cola o el ultimo de la lista sera el aux
     }
 
-    list->current->next = aux;
+    list->current->next = aux;   //modificamos el siguiente del actual para que apunte al aux
 }
 
 void * popFront(List * list) {
@@ -163,7 +163,32 @@ void * popBack(List * list) {
 // Nota: El current debe quedar apuntando al nodo siguiente del eliminado.
 
 void * popCurrent(List * list) {
-    return NULL;
+    if(list->current == NULL){  // por si no hay nada
+        return;
+    }
+
+    Node* nodoBorrar = list->current;            // establecemos cual borraremos
+    void* datoNodoBorrar = nodoBorrar->data;     // para sacar el dato de su interior
+
+    //en el caso de que tenga algo atras (que no sea el primero)
+    if(nodoBorrar->prev != NULL){ 
+        nodoBorrar->prev->next = nodoBorrar->next;  //el prev de actual apuntara al next de actual
+    }else{
+        list->head = nodoBorrar->next;             // la cabeza sera el next de actyual
+    }
+
+    //en el caso de que tenga algo adelante (que no sea el ultimo)
+    if(nodoBorrar->next != NULL){
+        nodoBorrar->next->prev = nodoBorrar->prev;  //el next de actual apuntara al prev de actual
+    }else{
+       list->tail = nodoBorrar->prev;             // la cola sera el anterior al actual
+    }
+
+    //actualizar el actual luego de desreferenciar
+    list->current = nodoBorrar->next  //el actual sera el que viene 
+    free(nodoBorrar);                //liberamos el nodo desreferenciado en la memoria
+
+    return datoNodoBorrar;          //mostramos el dato eliminado
 }
 
 void cleanList(List * list) {

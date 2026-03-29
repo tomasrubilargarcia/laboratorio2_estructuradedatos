@@ -221,3 +221,22 @@ Sun Mar 29 04:00:31 PM UTC 2026:
  tests:  11|1
 total_score: 50/60
 5b6b8f4
+Sun Mar 29 04:41:36 PM UTC 2026: 
+ list.c | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:167:9: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+  167 |         return;
+      |         ^~~~~~
+list.c:165:8: note: declared here
+  165 | void * popCurrent(List * list) {
+      |        ^~~~~~~~~~
+list.c:188:37: error: expected ‘;’ before ‘free’
+  188 |     list->current = nodoBorrar->next  //el actual sera el que viene
+      |                                     ^
+      |                                     ;
+  189 |     free(nodoBorrar);                //liberamos el nodo desreferenciado en la memoria
+      |     ~~~~                             
+607e272
