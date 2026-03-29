@@ -123,23 +123,28 @@ void pushFront(List * list, void * data) {
 }
 
 void pushBack(List * list, void * data) {
-    Node* new = createNode(data);
-
-    if(list->tail == NULL){
-        list->tail = new;
-        list->head = new;
-        list->current =new;
-    }else{
     list->current = list->tail;    
     pushCurrent(list,data);
-    }
-    
 }
 
 // 5. Programe la función void pushCurrent(List * list, void* data), la cual agrega un dato a continuación del nodo apuntado por list->current.
 
 void pushCurrent(List * list, void * data) {
+    if (list->current == NULL){
+        return;
+    }
+
+    Node* aux = createNode(data);
+    // anclar primero al auxiliar
+    aux->prev = list->current;
+    aux->next =list->current->next;
     
+    // anclar los nodos de la lista
+    if(list->current->next != NULL){   //si a la derecha del actual hay algo
+        list->current->next->prev = aux; //anclamos el de la derecha del actual al aux (prev pointer)
+    }else{  //sino haynada
+        list->tail = aux; //la cola o el ultimo de la lista sera el aux
+    }
 }
 
 void * popFront(List * list) {
