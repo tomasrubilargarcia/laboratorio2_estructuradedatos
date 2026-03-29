@@ -164,7 +164,7 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
     if(list->current == NULL){  // por si no hay nada
-        return;
+        return NULL;
     }
 
     Node* nodoBorrar = list->current;            // establecemos cual borraremos
